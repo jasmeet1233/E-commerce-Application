@@ -22,8 +22,8 @@ const Hero = () => {
         </Link>
       </article>
       <article className="img-container">
-        <img src={heroBcg} className="main-img" />
-        <img src={heroBcg2}  className="main-img" />
+        {/* <img src={heroBcg} className="main-img" />
+        <img src={heroBcg2}  className="main-img" /> */}
       </article>
     </Wrapper>
   );

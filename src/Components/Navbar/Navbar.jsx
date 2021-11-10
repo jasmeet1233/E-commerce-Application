@@ -1,12 +1,15 @@
 import React from 'react'
-import logo from '../assets/logo.svg'
+import logo from '../../assets/logo.svg'
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 import {FaBars} from 'react-icons/fa';
-import {links} from '../utils/constants'
+import {links} from '../../utils/constants'
 import CartButtons from './CartButtons';
+import { useDispatch } from 'react-redux';
+import { openSidebar } from '../../redux/reducers/productsReducer';
 
 const Navbar = () => {
+    const dispatch = useDispatch()
     return (
       <NavContainer>
         <div className="nav-center">
@@ -14,7 +17,7 @@ const Navbar = () => {
             <Link to="/">
               <img src={logo} alt="ComfySloth" />
             </Link>
-            <button type = 'button' className = 'nav-toggle'>
+            <button type = 'button' className = 'nav-toggle' onClick = {() => dispatch(openSidebar())}>
                 <FaBars />
             </button>
           </div>

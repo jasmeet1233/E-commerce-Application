@@ -1,6 +1,9 @@
 // import React from "react";
+import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Navbar, Sidebar, Footer } from "./Components";
+import { fetchData } from "./redux/reducers/productsReducer";
+import { useDispatch } from "react-redux";
 
 import {
   HomePage,
@@ -14,6 +17,12 @@ import {
 } from "./pages";
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchData())
+  }, [])
+
   return (
     <Router>
       <Navbar />

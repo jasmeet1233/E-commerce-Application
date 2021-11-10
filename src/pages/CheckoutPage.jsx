@@ -1,8 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import PageHero from '../Components/PageHero'
 
 const CheckoutPage = () => {
-  return <h4>checkout page</h4>
+  return <main>
+    <PageHero title = 'checkout' />
+    <Wrapper className = 'page'></Wrapper>
+  </main>
 }
 const Wrapper = styled.div``
 export default CheckoutPage
